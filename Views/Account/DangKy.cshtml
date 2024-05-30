@@ -1,0 +1,163 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng ký</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /*height: 100vh;*/
+            background-color: rgb(31, 58, 74);
+        }
+
+        .container {
+            margin-top: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 600px;
+            height: auto;
+            background-color: #F8F7F7;
+            border-radius: 30px;
+        }
+
+        h1 {
+            margin: 20px 30px 20px 30px;
+            font-size: 50px;
+        }
+
+        h1, .label-input {
+            color: #2B3674;
+        }
+
+        .input-form {
+            margin: 10px 0 0 20px;
+        }
+
+        .label-input {
+            padding-left: 10px;
+            font-size: 18px;
+        }
+
+        input {
+            width: 460px;
+            height: 50px;
+            border-radius: 45px;
+            border: solid #C4B7B7 1px;
+            box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+            padding: 0 20px;
+            font-size: 20px;
+        }
+
+        .submit-button {
+            margin: 30px 0 0 20px;
+        }
+
+        button {
+            background-color: #00ACE8;
+            width: 460px;
+            height: 50px;
+            border-radius: 16px;
+            border: none;
+            color: white;
+            font-weight: bold;
+            font-size: 22px;
+        }
+
+            button:hover {
+                cursor: pointer;
+                background-color: pink;
+            }
+
+        .nav-login {
+            margin: 20px;
+            font-size: 20px;
+            padding-left: 10px;
+            color: #2B3674;
+        }
+
+            .nav-login > label {
+                font-weight: bold;
+            }
+
+            .nav-login > a:visited {
+                color: blue;
+            }
+
+            .nav-login > a:active {
+                color: rgb(127, 44, 58);
+            }
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <form action="" method="post" class="col-md-4 col-md-5 col-lg-6">
+            <div class="title">
+                <h1>
+                    Đăng ký
+                </h1>
+            </div>
+            <div class="input-form">
+                <p class="label-input">Email</p>
+                <input type="text" name="email" required>
+            </div>
+            <div class="input-form">
+                <p class="label-input">Họ tên</p>
+                <input type="text" name="hoTen" required>
+            </div>
+            <div class="input-form">
+                <p class="label-input">Ngày tháng năm sinh</p>
+                <input type="text" name="ngaySinh" placeholder="dd/MM/yyyy" required>
+            </div>
+            <div class="input-form">
+                <p class="label-input">Quê quán</p>
+                <input type="text" name="queQuan" required>
+            </div>
+            <div class="input-form">
+                <p class="label-input">SDT</p>
+                <input type="text" name="sdt" required>
+            </div>
+            <div class="input-form">
+                <p class="label-input">Tên đăng nhập</p>
+                <input type="text" name="tenDangNhap" required>
+            </div>
+            <div class="input-form">
+                <p class="label-input">Mật khẩu</p>
+                <input type="password" name="matKhau" required>
+            </div>
+            <div class="input-form">
+                <p class="label-input">Nhập lại mật khẩu</p>
+                <input type="password" name="matKhauNL" required>
+            </div>
+
+            <div class="nav-login">
+                <label>Bạn đã có tài khoản ?</label>
+                <a href="@Url.Action("DangNhap","Account")">Đăng nhập</a>
+            </div>
+
+            <div class="submit-button">
+                <button type="submit">Đăng ký</button>
+            </div>
+            <div class="thong-bao" style="margin: 10px 0 0 20px; width: 460px; height: max-content; padding-left: 40px;">
+                <p style="font-size:16px; line-height: 50px; color: red;">@ViewBag.thongBao</p>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
